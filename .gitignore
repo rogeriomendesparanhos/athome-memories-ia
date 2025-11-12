@@ -1,0 +1,21 @@
+# Credenciais Sensiveis
+claude/credentials/*.txt
+claude/credentials/*.pem
+claude/credentials/*.key
+
+# Manter apenas sanitizadas
+!claude/credentials/*.example
+!claude/credentials/*.md
+
+# Arquivos temporarios
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+
+# Backups
+*.bak
+*.backup
