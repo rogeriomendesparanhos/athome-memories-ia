@@ -47,14 +47,23 @@ claude/
 - Mapeamento completo de um projeto
 
 **Exemplos:**
-- `projetos/arimonitor-v3/ARQUITETURA.md`
-- `projetos/arimonitor-v3/CODIGO_FONTE.md`
+- `projetos/arimonitor-v3/POINTER.md` (redirecionamento para repo)
 - `projetos/athome-voip-monitor/PROJETO.md`
 - `projetos/voip-infrastructure/GV2P_COMPLETE_MAPPING.md`
 - `projetos/voip-infrastructure/VOIP1_COMPLETE_INVENTORY.md`
 
 **Criterio:**
 Se o arquivo menciona especificamente um projeto/servidor no titulo ou conteudo → vai para `projetos/`
+
+**IMPORTANTE - PROJETOS COM REPOSITORIO GIT PROPRIO:**
+Alguns projetos possuem repositorio Git proprio e mantem documentacao Claude dentro do repo (pasta `claudedoc/`). Nesses casos:
+- A pasta `projetos/PROJETO/` contem apenas `POINTER.md` (redirecionamento)
+- Documentacao antiga arquivada em `projetos/PROJETO/_archived/`
+- Documentacao atual vive no repositorio do projeto
+
+Projetos com claudedoc/ proprio:
+- arimonitor-v3 → https://github.com/rogeriomendesparanhos/arimonitor-v3/claudedoc/
+- athome-voip-monitor → https://github.com/rogeriomendesparanhos/athome-voip-monitor/.claudedoc/
 
 ---
 
