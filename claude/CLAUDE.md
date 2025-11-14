@@ -25,8 +25,8 @@ Escolha uma opcao ou descreva diretamente o que precisa.
 
 ### Opcao 1: Acessar contexto geral
 **Acao:**
-- Ler `ORGANIZACAO.md` para entender estrutura
-- Ler `README.md` para overview do sistema
+- Ler `/mnt/c/claudedoc/athome-memories-ia/claude/ORGANIZACAO.md`
+- Ler `/mnt/c/claudedoc/athome-memories-ia/claude/CLAUDE.md`
 - Listar pastas de projetos disponiveis
 - Informar ao usuario o que esta disponivel
 
@@ -54,9 +54,9 @@ Escolha uma opcao ou descreva diretamente o que precisa.
 ### Opcao 3: Trabalhar em projeto especifico
 **Acao:**
 - Perguntar qual projeto
-- Buscar documentacao em `projetos/PROJETO/`
+- Buscar documentacao em `athome-memories-ia/claude/projetos/PROJETO/`
 - Ler arquivos relevantes do projeto
-- Se projeto tem repo git, buscar `claudedoc/` dele
+- Se projeto tem repo git proprio, buscar `claudedoc/` dele
 - Apresentar resumo do estado atual do projeto
 
 **Quando usar:**
@@ -95,6 +95,74 @@ Quando usuario disser:
 
 ---
 
+## Diretrizes de Interface
+
+### REGRA #1: OBJETIVIDADE ABSOLUTA
+**NUNCA mostre codigo ou resultado de codigo a menos que explicitamente solicitado.**
+
+**Comportamento correto:**
+- Executou comando? Diga apenas "Feito" ou resultado relevante
+- Leu arquivo? Diga apenas o que encontrou de importante
+- Criou/editou codigo? Diga apenas "Arquivo X atualizado"
+- Erro? Mostre APENAS a mensagem de erro, nao o codigo completo
+
+**Proibido:**
+- Exibir blocos de codigo sem solicitacao
+- Mostrar output completo de comandos
+- Copiar conteudo de arquivos na resposta
+- Encher tela com informacao desnecessaria
+
+### REGRA #2: RESPOSTA PONTUAL
+- Uma pergunta = Uma resposta direta
+- NAO liste possibilidades
+- NAO antecipe necessidades
+- NAO sugira "proximos passos" sem ser perguntado
+
+### REGRA #3: MODO CONVERSA
+Quando usuario entra em modo conversa:
+- Responda APENAS o que foi perguntado
+- NAO liste alternativas ou caminhos possiveis
+- Deixe usuario conduzir o raciocinio
+- Foco: construir conceito mutuo passo a passo
+
+### REGRA #4: PREVENCAO DE AUTO-COMPACT
+- Tela limpa = contexto preservado
+- Verbosidade excessiva causa perda de memoria
+- Respostas curtas mantem historico acessivel
+- Trabalho importante nao pode ser perdido
+
+**LEMBRE-SE:** Usuario sabe o que quer. Apenas responda o solicitado.
+
+---
+
+## Repositorio de Memoria (athome-memories-ia)
+
+**Localizacao Local:** `/mnt/c/claudedoc/athome-memories-ia/`
+**GitHub:** https://github.com/rogeriomendesparanhos/athome-memories-ia
+
+**Estrutura:**
+```
+athome-memories-ia/
+└── claude/
+    ├── CLAUDE.md              # Menu inicial
+    ├── ORGANIZACAO.md         # Regras de organizacao
+    ├── projetos/              # Docs especificos por projeto
+    │   ├── arimonitor-v3/
+    │   ├── athome-voip-monitor/
+    │   ├── voip-infrastructure/
+    │   └── outros/
+    ├── sessoes/               # Historico de sessoes por data
+    │   └── 2025/
+    ├── analises/              # Analises cross-project
+    ├── referencias/           # Procedimentos e padroes
+    └── credentials/           # Credenciais sanitizadas
+```
+
+**Para consultar documentacao completa:**
+Ler `athome-memories-ia/claude/ORGANIZACAO.md`
+
+---
+
 ## Contexto Rapido - Infraestrutura ATHome
 
 ### Ambientes
@@ -115,18 +183,20 @@ Quando usuario disser:
 - Python 3.12
 - Em desenvolvimento no voip3
 - Status: 95% pronto
+- Repo: https://github.com/rogeriomendesparanhos/arimonitor-v3
 
 **athome-voip-monitor:**
 - Sistema de processamento de audios via email
 - Dual-mode: audio (Python 2.7) + audio2 (Python 3.8)
 - Roteamento inteligente (local vs S3)
 - Status: 100% funcional em producao
+- Repo: https://github.com/rogeriomendesparanhos/athome-voip-monitor
 
 **voip-infrastructure:**
 - Mapeamento completo de todos servidores
 - Inventarios de ramais, trunks, rotas
-- Credenciais e procedimentos
 - Infraestrutura AWS EC2
+- 130+ empresas, 1500+ ramais
 
 ### Credenciais
 
@@ -161,7 +231,7 @@ Quando usuario disser:
 ### Acesso SSH
 - Sempre via `ssh root@servidor`
 - NUNCA mexer nas chaves SSH sem permissao
-- Senha universal: `mdansk`
+- Senha universal: mdansk
 
 ### Documentacao
 - Sempre em portugues SEM acentuacao
@@ -171,22 +241,22 @@ Quando usuario disser:
 
 ---
 
-## Repositorios Git
+## Repositorios Git Ativos
 
 **athome-memories-ia:**
-- Este repositorio
 - Contexto geral e historico
 - Documentacao cross-project
+- https://github.com/rogeriomendesparanhos/athome-memories-ia
 
 **arimonitor-v3:**
-- https://github.com/rogeriomendesparanhos/arimonitor-v3
 - Console de monitoramento
 - Pasta `claudedoc/` com docs especificos
+- https://github.com/rogeriomendesparanhos/arimonitor-v3
 
 **athome-voip-monitor:**
-- https://github.com/rogeriomendesparanhos/athome-voip-monitor
 - Sistema de processamento audios
 - Pasta `.claudedoc/` com docs especificos
+- https://github.com/rogeriomendesparanhos/athome-voip-monitor
 
 ---
 
@@ -205,6 +275,6 @@ Quando usuario disser:
 
 ---
 
-**Data criacao:** 2025-11-12
-**Versao:** 1.0
-**Repositorio:** athome-memories-ia
+**Data ultima atualizacao:** 2025-11-12
+**Versao:** 2.0
+**Repositorio memoria:** athome-memories-ia
